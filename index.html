@@ -1,12 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pradyun</title>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Poppins';
+        background: #0f0f0f;
+        color: #f4f4f4;
+    }
+
+    div.main {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+
+    div.Navbar {
+        display: flex;
+        justify-content: space-between;
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        font-size: 20px;
+        height: 60px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding-top:0;padding-bottom: 0;
+        padding-left:20px;padding-right:20px;
+        margin: 10px;
+    }
+
+    div.Navbar ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    div.Navbar li {
+        padding: 0 15px;
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    li a {
+        text-decoration: none;
+        color: #f0f0f0;
+    }
+
+    li a:hover {
+        color: #4db8ff;
+    }
+
+    div.intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 60px 50px;
+        gap: 5em;
+    }
+
+    div.intro .data {
+        font-size: 24px;
+        flex-basis: 70%;
+    }
+
+    div.intro img {
+        clip-path: circle(40%);
+        width: 300px;
+        height: 300px;
+        flex-basis: 30%;
+        border: 4px solid #4db8ff;
+    }
+
+    .Education,
+    .TechnicalSkills,
+    .Projects {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-left: 6px solid #4db8ff;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 50px;
+    }
+
+    div.techSkills {
+        display: flex;
+        flex-wrap: wrap;
+        height: 480px;
+        overflow-y: auto;
+        gap: 15px;
+    }
+
+    div.techCard {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-left: 6px solid #4db8ff;
+        border-radius: 12px;
+        padding: 10px 20px;
+        flex-basis: 48%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    #mathcs,
+    #Courses {
+        flex-basis: 100%;
+    }
+
+    .section-divider {
+        border: none;
+        border-top: 1px solid #444;
+        margin-top: 0; 
+        margin-bottom: 20px; 
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .list1 li,
+    .list2 li {
+        margin-bottom: 12px;
+    }
+
+    .projList {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .projCard {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-left: 6px solid #4db8ff;
+      border-radius: 12px;
+      padding: 15px;
+      flex-basis: 32%;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      color: #4db8ff;
+      font-weight: 600;
+    }
+
+    span {
+      font-weight: 600;
+      color: #ffffff;
+    }
+  </style>
+  <title>Portfolio</title>
+</head> 
 <body>
-    <h1>Hello Suyash!</h1>
-    <p>esala cup namde!</p>
+    <div class="Navbar">
+        <ul>
+            <li><a href="https://github.com/Pradyun-D"><i class="fa fa-github" style="font-size:24px"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/pradyun-diwakar-89697731a/"><i class="fa fa-linkedin-square" style="font-size:24px"></i></a></li>
+        </ul>
+        <ul>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#TechnicalSkills">Skills</a></li>
+            <li><a href="#Education">Education</a></li>
+            <li> <a href="#intro">About</a></li>
+        </ul>
+    </div>
+
+    <div class= "main">
+        <div  class="intro" id="intro">
+            <div class="data">
+                <p style="font-size: 48px;">Hello, I'm Pradyun <br> <span style="font-size: 32px;">a</span> <span style="font-size: 40px;">Multidisciplinary Tech Enthusiast</span> </p>
+                <p style="font-size: 32px;">I am a Computer Science undergrad at NITK, I like exploring diverse domains — AI/ML, dev, systems, finance, and robotics. I aim to gain interdisciplinary knowledge and use it to contribute/build projects which solve real world problems. </p>
+            </div>
+            <img src="prad.jpg",alt="nature">
+        </div>
+
+        <div class="Education" id="Education">
+            <h2 style="margin-bottom: 0; margin-left:20px;">Education</h2>
+            <hr class="section-divider">
+            <div>
+                <ul class="list1">
+                    <li><span>B.Tech in Computer Science</span>- NITK Surathkal (Batch of 2028)</li>
+                    <li><span>Pre-University(PU)</span>-RV PU College
+                        <ul class="list2">
+                            <li>94% in 12th Board Exam</li>
+                            <li>99.81%ile (AIR 3114) in JEE Main 2024</li>
+                        </ul>
+                    </li>
+                    <li><span>Schooling</span>- Sri Kumarans Children's Home
+                        <ul>
+                            <li>95% in 10th CBSE Board Exam</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="TechnicalSkills" id="TechnicalSkills">
+            <h2 style="margin-bottom: 0; margin-left:20px;"><\>Technical Skills</h2>
+            <hr class="section-divider">
+
+            <div class="techSkills">
+                <div class="techCard">
+                    <h2 style="margin-bottom: 0; margin-left:20px;">AI & Machine Learning</h2>
+                    <hr class="section-divider">
+                    <div>
+                        <ul class="list1">
+                            <li><span>Libraries:</span>PyTorch, Pandas, Numpy, Scikit-learn</li>
+                            <li><span>Concepts:</span>Multi-agent systems, RAG, CNNs, ResNets, Word Embeddings, RNN, LSTM</li>
+                            <li><span>Frameworks:</span>Agno, LlamaIndex</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="techCard" id="ProgrammingLang">
+                    <h2 style="margin-bottom: 0; margin-left:20px;">Programming Languages</h2>
+                    <hr class="section-divider">
+                    <div>
+                        <ul class="list1">
+                            <li><span>Proficiency</span>Beginner-Intermediate</li>
+                            <li>Python, C, C++, Java, HTML</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="techCard" id="mathcs">
+                    <h2 style="margin-bottom: 0; margin-left:20px;">Math & Core CS</h2> 
+                    <hr class="section-divider">
+                    <div>
+                        <ul class="list1">
+                            <li>Discrete Mathematics: Number theory, Graph Theory</li>
+                            <li>Calculus, Differential Equations, Sequence & Series</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="techCard" id="Courses">
+                    <h2 style="margin-bottom: 0; margin-left:20px;">Courses</h2> 
+                    <hr class="section-divider">
+                    <div>
+                        <ul class="list1">
+                            <li>Machine Learning Specialisation- By Andrew Ng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="Projects" id="Projects">
+            <h2 style="margin-bottom: 0; margin-left:20px;">Projects</h2>
+            <hr class="section-divider">
+
+            <div class="projList">
+                <div class="projCard">
+                    <h2 style="margin-bottom: 0; margin-left:20px;">StockIQ   <a href="https://github.com/Pradyun-D/StockIQ"><i class="fa fa-github" style="font-size:24px"></i></a></h2>
+                    <hr class="section-divider">
+                    <div>
+                        <p>A desktop app that uses Generative AI to provide contextual analysis of stocks. It shows key stock data, relevant news, and insights into factors affecting prices to support informed investment decisions.</p>
+                    </div>
+                </div>
+
+                <div class="projCard">
+                    <h2 style="margin-bottom: 0; margin-left:20px;">EmotionScope   <a href="https://github.com/Pradyun-D/EmotionScope"><i class="fa fa-github" style="font-size:24px"></i></a></h2>
+                    <hr class="section-divider">
+                    <div>
+                        <p>This project enhances human-machine interaction by detecting emotions in conversations using both text and facial expressions. It combines a TF-IDF-based NLP model with a ResNet-18 vision model, trained on the MELD dataset, using late fusion for improved emotion recognition accuracy.</p>
+                    </div>
+                    
+                </div>
+
+                <div class="projCard">
+                    <h2 style="margin-bottom: 0; margin-left:20px;">RAG-vs-Riff  <a href="https://github.com/Pradyun-D/RAG-vs-Riff"><i class="fa fa-github" style="font-size:24px"></i></a></h2>
+                    <hr class="section-divider">
+                    <div>
+                        <p>This is an interactive AI-powered legal debate system where two AI chatbots—one using RAG (Retrieval-Augmented Generation) for factual legal arguments and the other relying on pure improvisation and loophole nonsense—face off in a courtroom-style battle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
