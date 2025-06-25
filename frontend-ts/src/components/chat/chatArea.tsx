@@ -8,7 +8,7 @@ import { ChatMessageList } from '../ui/chat/chat-message-list'
 import { ChatBubble, ChatBubbleMessage } from '../ui/chat/chat-bubble'
 import { motion } from 'framer-motion'
 
-const Chat = ({insert, chatMessages, message, setMessage, clicked, setClicked, opacity, setOpacity, stream, setStream, updateRequired, setUpdateRequired}: {insert:(message:string)=>void, chatMessages:any[], message:string, setMessage: (message:string) => void, clicked:boolean, setClicked: (clicked:boolean) => void, opacity:number, setOpacity: (opacity:number) => void, stream:string, setStream: (stream:string) => void, updateRequired:boolean, setUpdateRequired: (updateRequired:boolean) => void }) => {
+const Chat = ({insert, chatMessages, message, setMessage, clicked, setClicked, opacity, setOpacity, stream, setStream,setUpdateRequired}: {insert:(message:string)=>void, chatMessages:any[], message:string, setMessage: (message:string) => void, clicked:boolean, setClicked: (clicked:boolean) => void, opacity:number, setOpacity: (opacity:number) => void, stream:string, setStream: (stream:string) => void, setUpdateRequired: (updateRequired:boolean) => void }) => {
 
     useEffect(() => {
     if(clicked && message.length>0) {

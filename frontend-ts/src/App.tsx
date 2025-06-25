@@ -168,7 +168,6 @@ function App() {
                     setOpacity={setOpacity} 
                     stream={stream} 
                     setStream={setStream} 
-                    updateRequired={updateRequired} 
                     setUpdateRequired={setUpdateRequired}
                   />
                 }
