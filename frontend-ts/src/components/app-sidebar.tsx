@@ -9,7 +9,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
-  SidebarFooter,
   SidebarSeparator
 } from "@/components/ui/sidebar"
 import { 
@@ -17,21 +16,14 @@ import {
   Users, 
   Lightbulb, 
   User, 
-  MessageSquare, 
   Plus,
-  Settings,
-  HelpCircle,
-  Sun,
-  Moon
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export function AppSidebar() {
   return (
     <Sidebar className="overflow-hidden" collapsible="icon" variant="inset">
       <SidebarHeader>
         <div className="flex items-center justify-between">
-          <span className="font-bold text-lg">W</span>
           <SidebarTrigger />
         </div>
       </SidebarHeader>
@@ -114,40 +106,7 @@ export function AppSidebar() {
 
         <SidebarSeparator />
 
-        <SidebarFooter className="group-data-[collapsible=icon]:hidden">
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <Button>
-                Change Mode               
-              </Button>
-            </SidebarMenuItem>
-          </SidebarMenu>
-        </SidebarFooter>
-
       </SidebarContent>
-
-
-
-      {/* <SidebarFooter>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Settings">
-                  <Settings className="h-4 w-4" />
-                  <span>Settings</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Help">
-                  <HelpCircle className="h-4 w-4" />
-                  <span>Help</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarFooter> */}
     </Sidebar>
   )
 }
