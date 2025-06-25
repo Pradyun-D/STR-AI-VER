@@ -37,9 +37,9 @@ const Chat = ({insert, chatMessages, message, setMessage, clicked, setClicked, o
     },[message])
 
     return (  
-        <div className="flex flex-col h-[87vh] w-full mb-3 rounded-2xl px-6 ">
-            <div className="flex-1 overflow-y-auto w-full max-w-4xl mx-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent rounded-xl">
-                <div className="older-messages py-4">
+        <div className="flex flex-col h-[87vh] w-full mb-3 rounded-2xl px-6 pr-0 ">
+            <div className="flex-1 overflow-y-auto w-full mx-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent rounded-xl">
+                <div className="older-messages max-w-4xl mx-auto">
                     <ChatMessageList>
                         {
                             chatMessages.map((item, index)=>{
@@ -72,7 +72,7 @@ const Chat = ({insert, chatMessages, message, setMessage, clicked, setClicked, o
                         <motion.div 
                             initial={{ opacity: 0, y: 10 }} 
                             animate={{ opacity: 1, y: 0 }} 
-                            className="text-left max-w-4xl mb-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 shadow-md border border-green-100"
+                            className="text-left max-w-4xl mb-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-emerald-900 dark:to-green-900 rounded-2xl p-4 border border-green-100 dark:border-emerald-800 shadow-md"
                         >
                             <div className="prose prose-sm max-w-none">
                                 <ReactMarkdown>{stream}</ReactMarkdown>
@@ -84,11 +84,11 @@ const Chat = ({insert, chatMessages, message, setMessage, clicked, setClicked, o
             
             <motion.div
                 whileHover={{scale:1.02}}
-                className="relative max-w-4xl w-full bg-white/90 backdrop-blur-sm shadow-lg rounded-2xl p-3 mb-4 border border-white/20 mx-auto"
+                className="relative max-w-4xl w-full bg-gray-50/90 dark:bg-gray-900/80 backdrop-blur-sm rounded-2xl p-3 mb-4 border border-gray-200 dark:border-gray-700 mx-auto shadow-lg"
             >
                 <Textarea   
                     placeholder="Enter a concept..."
-                    className="min-h-[40px] resize-none border-0 ring-0 focus:outline-none focus-visible:ring-0 shadow-none bg-transparent text-gray-800 placeholder:text-gray-500 text-lg pr-16"
+                    className="min-h-[40px] resize-none border-0 ring-0 focus:outline-none focus-visible:ring-0 shadow-none bg-transparent text-gray-800 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-lg pr-16"
                     id="chat"
                     value={message}
                     onChange={(e)=>setMessage(e.target.value)}
@@ -96,13 +96,13 @@ const Chat = ({insert, chatMessages, message, setMessage, clicked, setClicked, o
                 />
                 <Button 
                     size="sm" 
-                    className="absolute bottom-2 right-2 h-8 w-8 p-0 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg"
+                    className="absolute bottom-2 right-2 h-8 w-8 p-0 bg-gradient-to-r from-sky-500 to-violet-500 hover:from-sky-600 hover:to-violet-600 dark:from-sky-400 dark:to-violet-400 dark:hover:from-sky-500 dark:hover:to-violet-500 shadow-lg"
                     style={{opacity:opacity}}
                     onClick={() => {
                         if(message.length > 0) setClicked(true)
                     }}
                 >
-                    <Send className="h-4 w-4" />
+                    <Send className="h-4 w-4 text-white" />
                 </Button>
             </motion.div>
         </div>

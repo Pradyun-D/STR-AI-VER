@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
-  SidebarSeparator
+  SidebarSeparator,
 } from "@/components/ui/sidebar"
 import { 
   BookOpen, 
@@ -18,10 +18,11 @@ import {
   User, 
   Plus,
 } from "lucide-react"
+// import { ModeToggle } from "./mode-toggle"
 
 export function AppSidebar() {
   return (
-    <Sidebar className="overflow-hidden" collapsible="icon" variant="inset">
+    <Sidebar className="overflow-hidden backdrop-blur-xl bg-white/30 dark:bg-white/10 shadow-md" collapsible="icon" variant="inset">
       <SidebarHeader>
         <div className="flex items-center justify-between">
           <SidebarTrigger />
@@ -104,7 +105,10 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarSeparator />
+        {/* <SidebarSeparator />
+        <SidebarFooter>
+          <ModeToggle />
+        </SidebarFooter> */}
 
       </SidebarContent>
     </Sidebar>

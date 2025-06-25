@@ -41,7 +41,7 @@ const IntroChatInterface = ({setEmptyChat, insert, message, setMessage, clicked,
   return (  
     <div className="flex flex-1 w-full flex-col justify-center items-center gap-6 px-4">
       <div >
-        <h2 className="font-bold text-3xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+        <h2 className="font-bold text-3xl bg-gradient-to-r from-sky-500 to-violet-500 dark:from-sky-400 dark:to-violet-400 bg-clip-text text-transparent mb-2">
           Ask me any DSA concept
         </h2>
       </div>
@@ -49,11 +49,11 @@ const IntroChatInterface = ({setEmptyChat, insert, message, setMessage, clicked,
       <motion.div 
         whileHover={{ scale: 1.02, boxShadow: "0px 20px 40px rgba(0,0,0,0.1)" }}
         transition={{ type: "spring", stiffness: 200 }}
-        className="relative w-full max-w-4xl backdrop-blur-sm border border-white/20 shadow-2xl rounded-2xl p-6 transition-all"
+        className="relative w-full max-w-4xl bg-gray-50/90 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-2xl rounded-2xl p-6 transition-all"
       >
         <Textarea   
           placeholder="Ask any DSA concept like 'Explain Binary Search' or 'Explain Graph Traversal'..."
-          className="min-h-[60px] resize-none border-0 ring-0 focus:outline-none focus-visible:ring-0 shadow-none bg-transparent text-gray-800 placeholder:text-gray-500 text-lg pr-16"
+          className="min-h-[60px] resize-none border-0 ring-0 focus:outline-none focus-visible:ring-0 bg-transparent text-gray-800 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-lg pr-16"
           id="chat"
           value={message}
           onChange={(e)=>{setMessage(e.target.value)}}
@@ -62,7 +62,7 @@ const IntroChatInterface = ({setEmptyChat, insert, message, setMessage, clicked,
         <Button 
           size="icon"
           variant="ghost"
-          className="absolute bottom-4 right-4 h-12 w-12 p-0 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg"
+          className="absolute bottom-4 right-4 h-12 w-12 p-0 bg-gradient-to-r from-sky-500 to-violet-500 hover:from-sky-600 hover:to-violet-600 dark:from-sky-400 dark:to-violet-400 dark:hover:from-sky-500 dark:hover:to-violet-500 shadow-lg"
           style={{opacity:opacity}}
           onClick={()=>{if(message.length>0)setClicked(true)}}
         >

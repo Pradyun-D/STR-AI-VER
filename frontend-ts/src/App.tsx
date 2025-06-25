@@ -18,6 +18,7 @@ import { createClient } from '@supabase/supabase-js'
 import { SignedIn, SignedOut } from '@clerk/clerk-react'
 import { useClerk } from '@clerk/clerk-react'
 import LandingPage from './components/landingPage'
+// import { ThemeProvider } from "@/components/theme-provider"
 
 const SignOutButton = () => {
   const { signOut } = useClerk()
@@ -108,75 +109,77 @@ function App() {
   }    
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      <SignedOut>
-        <LandingPage />
-      </SignedOut>
-      
-      <SignedIn>
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset className='!m-0 !rounded-none !shadow-none min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100'>
-            <div className="flex flex-col w-full min-h-screen items-center">
-              <div className="flex w-full justify-between items-center p-4 backdrop-blur-lg bg-white/5 rounded-xl">  
-                <div className="text-2xl font-bold text-gray-800">
-                  <h1 className="text-2xl font-bold">STR-AI-VER</h1>
+    // <ThemeProvider>
+      <div className=" min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+        <SignedOut>
+          <LandingPage />
+        </SignedOut>
+        
+        <SignedIn>
+          <SidebarProvider>
+            <AppSidebar />
+            <SidebarInset className='!m-0 !rounded-none !shadow-none min-h-screen bg-gradient-to-br from-indigo-50 via-sky-100 to-purple-200'>
+              <div className="flex flex-col w-full min-h-screen items-center">
+                <div className="flex w-full justify-between items-center p-4 backdrop-blur-lg bg-white/5 border-b border-gray-200 dark:border-gray-800 ">  
+                  <div className="text-2xl text-gray-800">
+                    <h2 className="text-2xl">STR-AI-VER</h2>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <DropdownMenu>
+                      <DropdownMenuTrigger>
+                        <Avatar className="ring-2 ring-white/20 shadow-lg">
+                          <AvatarImage src={user?.imageUrl} />
+                        </Avatar>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className='mr-4 bg-white/95 border-0 shadow-xl'>
+                        <DropdownMenuLabel className="text-gray-700">{user?.fullName}</DropdownMenuLabel>
+                        <hr />
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>Profile</DropdownMenuItem>
+                        <DropdownMenuItem className='text-red-500 hover:bg-red-50'>
+                          <SignOutButton />
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger>
-                      <Avatar className="ring-2 ring-white/20 shadow-lg">
-                        <AvatarImage src={user?.imageUrl} />
-                      </Avatar>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className='mr-4 bg-white/95 border-0 shadow-xl'>
-                      <DropdownMenuLabel className="text-gray-700">{user?.fullName}</DropdownMenuLabel>
-                      <hr />
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>Profile</DropdownMenuItem>
-                      <DropdownMenuItem className='text-red-500 hover:bg-red-50'>
-                        <SignOutButton />
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </div>
-              </div>
 
-              <div className="flex-1 flex justify-center items-center w-full px-4">
-                {(!chatMessages.length && emptyChat) ? 
-                  <IntroChatInterface 
-                    setEmptyChat={setEmptyChat} 
-                    insert={insert} 
-                    message={message} 
-                    setMessage={setMessage} 
-                    clicked={clicked} 
-                    setClicked={setClicked} 
-                    opacity={opacity} 
-                    setOpacity={setOpacity} 
-                    setStream={setStream} 
-                    // updateRequired={updateRequired} 
-                    setUpdateRequired={setUpdateRequired}
-                  /> : 
-                  <ChatArea 
-                    insert={insert} 
-                    chatMessages={chatMessages} 
-                    message={message} 
-                    setMessage={setMessage} 
-                    clicked={clicked} 
-                    setClicked={setClicked} 
-                    opacity={opacity} 
-                    setOpacity={setOpacity} 
-                    stream={stream} 
-                    setStream={setStream} 
-                    setUpdateRequired={setUpdateRequired}
-                  />
-                }
+                <div className="flex-1 flex justify-center items-center w-full px-4 pr-0">
+                  {(!chatMessages.length && emptyChat) ? 
+                    <IntroChatInterface 
+                      setEmptyChat={setEmptyChat} 
+                      insert={insert} 
+                      message={message} 
+                      setMessage={setMessage} 
+                      clicked={clicked} 
+                      setClicked={setClicked} 
+                      opacity={opacity} 
+                      setOpacity={setOpacity} 
+                      setStream={setStream} 
+                      // updateRequired={updateRequired} 
+                      setUpdateRequired={setUpdateRequired}
+                    /> : 
+                    <ChatArea 
+                      insert={insert} 
+                      chatMessages={chatMessages} 
+                      message={message} 
+                      setMessage={setMessage} 
+                      clicked={clicked} 
+                      setClicked={setClicked} 
+                      opacity={opacity} 
+                      setOpacity={setOpacity} 
+                      stream={stream} 
+                      setStream={setStream} 
+                      setUpdateRequired={setUpdateRequired}
+                    />
+                  }
+                </div>
               </div>
-            </div>
-          </SidebarInset>
-        </SidebarProvider>
-      </SignedIn>
-    </div>
+            </SidebarInset>
+          </SidebarProvider>
+        </SignedIn>
+      </div>
+    // </ThemeProvider>
   )
 }
 
