@@ -72,7 +72,7 @@ const Chat = ({insert, chatMessages, message, setMessage, clicked, setClicked, o
                         <motion.div 
                             initial={{ opacity: 0, y: 10 }} 
                             animate={{ opacity: 1, y: 0 }} 
-                            className="text-left max-w-4xl mb-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-emerald-900 dark:to-green-900 rounded-2xl p-4 border border-green-100 dark:border-emerald-800 shadow-md"
+                            className="text-left max-w-4xl mx-auto mb-4 dark:from-emerald-900 dark:to-green-900 rounded-2xl dark:border-emerald-800"
                         >
                             <div className="prose prose-sm max-w-none">
                                 <ReactMarkdown>{stream}</ReactMarkdown>
