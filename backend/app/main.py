@@ -1,16 +1,14 @@
 from fastapi import FastAPI,Depends
 from sqlmodel import *
-from .db import engine
-import os
+import uvicorn
 from contextlib import asynccontextmanager
-from .db import engine,SQLModel
+from app.db.db import engine
+from app.db import models
 
-SQLModel.metdata.create_all(engine)
-
+@asynccontextmanager
 async def lifespan(app: FastAPI):
     SQLModel.metadata.create_all(engine)
     yield
-
 
 app = FastAPI(lifespan=lifespan)
 

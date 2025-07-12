@@ -1,8 +1,10 @@
 from sqlmodel import create_engine, Session
-from . import models
 import os
+from dotenv import load_dotenv
 
-POSTGRES_URL = os.environ["POSTGRES_URL"]
+load_dotenv()
+
+POSTGRES_URL = os.getenv("POSTGRES_URL")
 
 engine = create_engine(POSTGRES_URL, echo=True)
 
